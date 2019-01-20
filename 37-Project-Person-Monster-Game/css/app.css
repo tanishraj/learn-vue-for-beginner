@@ -4,13 +4,23 @@
 
 .healthbar {
     width: 80%;
-    background-color: #eee;
+    background-color: #ff3f43;
     margin: auto;
     transition: width 500ms;
+    position: relative;
 }
 
-.healthbar .healthbar{
+.healthbar div{
     padding: 20px 0;
+    position: initial;
+}
+
+.healthbar span{
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    margin-left: -10px;
+    z-index: 999;
 }
 
 .controls, .log {
