@@ -23,7 +23,8 @@
     "@progress/kendo-theme-default": "^3.2.0",
     "@progress/kendo-ui": "^2019.1.130",
     "@progress/kendo-upload-vue-wrapper": "^2019.1.124",
-    "vue": "^2.5.11"
+    "vue": "^2.5.11",
+    "xlsx": "^0.14.1"
   },
   "browserslist": [
     "> 1%",
