@@ -111,12 +111,9 @@
     
                     /* generate HTML */
                     jsonFormat = XLSX.utils.sheet_to_json(ws);
-                    var jsonString = JSON.stringify(jsonFormat);
-                    localStorage.setItem('contractData', jsonString);
                 };
     
                 reader.readAsArrayBuffer(file);
-                this.localDataSource = localStorage.getItem('contractData');
             },
         }
     }
