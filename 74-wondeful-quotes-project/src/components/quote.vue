@@ -25,6 +25,7 @@ export default {
     .quote{
         cursor: pointer;
         padding: 20px 15px;
+        border: 1px solid #ddd;
     }
 
     .quote:hover{
