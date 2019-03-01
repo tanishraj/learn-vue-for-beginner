@@ -10,12 +10,12 @@
                 <!-- Exercise 2 -->
                 <!-- Build a global Filter which counts the length of a word and it appends it -->
                 <!-- Like this: "Test" => Gets Filtered to => "Test (4)" -->
-                <p>My Name length is: {{text | textLength}}</p>
+                <p>My Name length is: {{nameLength}}</p>
 
                 <!-- Exercise 3 -->
                 <!-- Do the same as in Exercises 1 & 2, now with Computed Properties -->
                 <p>My Name reversed: {{reverseName}}</p>
-                <p>My Name length is: {{nameLength}}</p>
+                <p>My Name length is: {{lengthAware}}</p>
 
                 <!-- Exercise 4 -->
                 <!-- Share the Computed Property rebuilding Exercise 2 via a Mixin -->
@@ -25,7 +25,10 @@
 </template>
 
 <script>
+    import { lengthAwareMixin } from './lengthAwareMixin';
+
     export default {
+        mixins: [lengthAwareMixin],
         data() {
             return {
                 text: 'Tanish Raj',
@@ -43,8 +46,8 @@
                 return ((this.text.split('')).reverse()).join('');
             },
 
-            nameLength(){
-                return this.text + ' ('+this.text.length+')';
+            nameLength() {
+                return this.text + ' (' + this.text.length + ')';
             }
         }
     }
