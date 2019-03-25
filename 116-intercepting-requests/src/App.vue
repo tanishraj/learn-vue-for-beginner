@@ -14,14 +14,17 @@
             <input type="text" class="form-control" v-model="user.email">
           </div>
           <input type="button" class="btn btn-primary" @click="submitData" value="Submit">
-          <hr/>
+          <hr>
 
           <button class="btn btn-info" @click="fetchData">Get Data From Server</button>
-          <br/><br/>
+          <br>
+          <br>
           <ul class="list-group">
-            <li class="list-group-item" v-for="(u,index) in users" :key="u.userName + index">
-              {{u.userName}} {{u.email}}
-            </li>
+            <li
+              class="list-group-item"
+              v-for="(u,index) in users"
+              :key="u.userName + index"
+            >{{u.userName}} {{u.email}}</li>
           </ul>
         </div>
       </div>
@@ -34,38 +37,41 @@ export default {
   name: "app",
   data() {
     return {
-      users:[],
-      
+      users: [],
+
       user: {
         userName: "Tanish",
         email: "tanishraj91@gmail.com"
       }
-    }
+    };
   },
 
   methods: {
-    submitData(){
-      this.$http.post('', this.user)
-      .then(response => {
-        console.log("Data saved successfully.");
-      }, error => {
-        console.log(error);
-      })
+    submitData() {
+      this.$http.post("", this.user).then(
+        response => {
+          console.log("Data saved successfully.");
+        },
+        error => {
+          console.log(error);
+        }
+      );
     },
 
-    fetchData(){
-      this.$http.get('')
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        // this.users = data; This is also an approach
-        const resultArray = [];
-        for(let key in data){
-          resultArray.push(data[key])
-        }
-        this.users = resultArray;
-      })
+    fetchData() {
+      this.$http
+        .get("")
+        .then(response => {
+          return response.json();
+        })
+        .then(data => {
+          // this.users = data; This is also an approach
+          const resultArray = [];
+          for (let key in data) {
+            resultArray.push(data[key]);
+          }
+          this.users = resultArray;
+        });
     }
   }
 };
