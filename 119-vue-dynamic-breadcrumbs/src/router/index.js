@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue';
 import Router from 'vue-router'
 import home from '@/components/home'
 import about from '@/components/about'
@@ -11,67 +11,49 @@ Vue.use(Router)
 export default new Router({
 	routes: [{
 		path: '/',
-		name: 'home',
 		component: home,
 		meta: {
-			breadcrumb: [{
-				name: 'home'
-			}]
+			breadcrumb: 'Home'
 		}
 	}, {
 		path: '/about',
-		name: 'about',
 		component: about,
 		meta: {
-			breadcrumb: [{
-				name: 'about'
-			}]
+			breadcrumb: 'About'
 		}
 	}, {
 		path: '/contact',
-		name: 'contact',
 		component: contact,
 		meta: {
-			breadcrumb: [{
-				name: 'contact'
-			}]
+			breadcrumb: 'Contact'
 		}
 	}, {
 		path: '/course',
-		name: 'course',
 		component: course,
 		meta: {
-			breadcrumb: [{
-				name: 'course'
-			}]
+			breadcrumb: 'Course'
 		},
 		children: [{
-			path: '/english',
-			name: 'english',
+			path: 'english',
 			component: english,
 			meta: {
-				breadcrumb: [{
-					name: 'english'
-				}]
+				breadcrumb: 'English'
 			}
 		}, {
-			path: '/math',
-			name: 'math',
+			path: 'math',
 			component: math,
 			meta: {
-				breadcrumb: [{
-					name: 'math'
-				}]
+				breadcrumb: 'Math'
 			}
 		}, {
-			path: '/hindi',
-			name: 'hindi',
+			path: 'hindi',
 			component: hindi,
 			meta: {
-				breadcrumb: [{
-					name: 'hindi'
-				}]
+				breadcrumb: 'Hindi'
 			}
 		}, ]
+	}, {
+		path: '*',
+		redirect: '/'
 	}]
 })
