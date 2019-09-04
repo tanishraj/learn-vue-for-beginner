@@ -24,7 +24,7 @@ export default new Router({
 		meta: {
 			breadcrumb: [{
 				name: 'Home',
-				link: 'home'
+				link: '/'
 			}, {
 				name: 'About'
 			}]
