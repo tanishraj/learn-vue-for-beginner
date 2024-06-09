@@ -1,5 +1,6 @@
 <script setup>
 import BindingToObjects from '@/components/BindingToObjects.vue'
+import BindingToArrays from './components/BindingToArrays.vue';
 </script>
 
 <template>
@@ -18,7 +19,7 @@ import BindingToObjects from '@/components/BindingToObjects.vue'
     <div class="content">
       <h3>Binding to Arrays:</h3>
       <p>We can bind :class to an array to apply a list of classes:</p>
-      <BindingToObjects />
+      <BindingToArrays />
       <p>Which will render:</p>
       {{ `
       <div class="active text-danger"></div>
