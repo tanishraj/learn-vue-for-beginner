@@ -1,31 +1,19 @@
 <script setup>
-import { ref, onBeforeMount, onMounted } from 'vue';
+import { ref, onBeforeMount } from 'vue';
 
-const value = ref(null);
-const loading = ref(true);
-
-const makeApiCall = () => {
-  setTimeout(() => {
-    value.value = 'Hello World!';
-  }, 5000)
-}
+const message = ref('');
 
 onBeforeMount(() => {
-  console.log("OnBefore Mounted Called")
-  makeApiCall()
+  message.value = 'Hello, Vue!';
 });
-
-onMounted(() => {
-  console.log("Component is mounted");
-})
-
 </script>
 
 <template>
   <h3>OnBeforeMount() Example:</h3>
 
-  <p v-if="loading">Loading...</p>
-  {{ value }}
+  <div v-if="message">
+    <h1>{{ message }}</h1>
+  </div>
 </template>
 
 <style scoped></style>
